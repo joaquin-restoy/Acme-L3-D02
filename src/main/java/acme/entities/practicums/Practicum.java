@@ -3,7 +3,7 @@ package acme.entities.practicums;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -30,6 +30,7 @@ public class Practicum extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 	@NotBlank
+	@Column(unique=true)
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
 	protected String				code;
 
