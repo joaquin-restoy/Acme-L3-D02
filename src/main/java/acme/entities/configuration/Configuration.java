@@ -15,9 +15,10 @@ public class Configuration extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}$")
+	@Pattern(regexp = "^[A-Z]{3}$", message= "{validation.configuration.code1}")
 	protected String			defaultCurrency;
 
 	@NotBlank
+	@Pattern(regexp = "^([A-Z]{3}(,\b|\Z))+$", message="{validation.configuration.code2}")
 	protected String			acceptedCurrencies;
 }
