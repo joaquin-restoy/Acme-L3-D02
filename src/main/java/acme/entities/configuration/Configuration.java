@@ -12,7 +12,7 @@ public class Configuration extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes ------------------------------------------------------------
 
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}$", message= "{validation.configuration.code1}")
