@@ -56,4 +56,5 @@ public class AuditingRecord extends AbstractEntity {
 
 	@URL
 	protected String			link;
+
 }
