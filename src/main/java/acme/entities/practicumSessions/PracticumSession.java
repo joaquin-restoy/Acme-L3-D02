@@ -51,9 +51,9 @@ public class PracticumSession extends AbstractEntity {
 
 	// Relationships ---------------------------------------------------------
 
-	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	private Practicum			practicum;
+	@ManyToOne(optional = false)
+	protected Practicum			practicum;
 
 }
