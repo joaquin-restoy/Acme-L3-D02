@@ -8,7 +8,7 @@ import acme.framework.data.AbstractEntity;
 
 public class Configuration extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
+	// Serialisation identifier ----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
