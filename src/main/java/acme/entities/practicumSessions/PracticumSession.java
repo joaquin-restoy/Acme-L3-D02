@@ -1,13 +1,14 @@
 
 package acme.entities.practicumSessions;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.Valid;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -34,26 +35,33 @@ public class PracticumSession extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			sumary;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				startDate;
+	protected Date			startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				finishDate;
+	protected Date			finishDate;
 
 	@URL
 	protected String			link;
+
 
 	// Derived attributes ----------------------------------------------------
 
 	// Relationships ---------------------------------------------------------
 
+<<<<<<< HEAD
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
 	protected Practicum			practicum;
+=======
+
+	@ManyToOne()
+	private Practicum practicum;
+>>>>>>> 8335395acdc788e857221eea1edf355346c11759
 
 }

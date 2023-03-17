@@ -10,7 +10,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -32,15 +32,15 @@ public class Peep extends AbstractEntity {
 	@NotNull
 	protected Date				instantiation;
 
-	@Length(max = 75)
+	@Size(max = 75)
 	@NotBlank
 	protected String			title;
 
-	@Length(max = 75)
+	@Size(max = 75)
 	@NotBlank
 	protected String			nick;
 
-	@Length(max = 100)
+	@Size(max = 100)
 	@NotBlank
 	protected String			message;
 

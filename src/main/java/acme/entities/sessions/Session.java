@@ -1,13 +1,11 @@
 
-package acme.entities.tutorialSessions;
+package acme.entities.sessions;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -15,7 +13,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.NatureType.NatureType;
-import acme.entities.tutorials.Tutorial;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +21,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class TutorialSession extends AbstractEntity {
+public class Session extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -45,11 +42,11 @@ public class TutorialSession extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				startDate;
+	protected Date				sessionInit;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				finishDate;
+	protected Date				sessionFinish;
 
 	@URL
 	protected String			link;
@@ -57,8 +54,5 @@ public class TutorialSession extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Tutorial			tutorial;
+
 }
