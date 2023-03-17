@@ -1,20 +1,22 @@
 
 package acme.roles;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.data.AbstractRole;
+import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Student extends AbstractRole {
+public class Student extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,12 +30,12 @@ public class Student extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 100)
-	private String				strongFeatures;
+	private List<String>		strongFeatures;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				weakFeatures;
+	private List<String>		weakFeatures;
 
 	@URL
-	protected String			link;
+	protected String			information;
 }
