@@ -15,7 +15,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.hibernate.validator.constraints.time.DurationMin;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -42,7 +41,6 @@ public class AuditingRecord extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	@DurationMin(hours = 1)
 	protected Date				finishDate;
 
 	@NotNull
@@ -56,5 +54,4 @@ public class AuditingRecord extends AbstractEntity {
 
 	@URL
 	protected String			link;
-
 }
